@@ -1,6 +1,7 @@
-import {Controller, Query, Mutation} from "graphstack";
+import {Controller, Mutation, Query} from "graphstack";
 import {EntityManager} from "typeorm";
-import {Post} from "../entity/Post";
+import {Category} from "../entity/Category";
+import {CategorySaveArgs} from "../args/CategorySaveArgs";
 
 @Controller()
 export class CategoryController {
@@ -8,30 +9,21 @@ export class CategoryController {
     constructor(private entityManager: EntityManager) {
     }
 
-    // serves "posts: [Post]" requests
     @Query()
-    posts() {
-        return this.entityManager.find(Post);
+    categories(): Promise<Category[]> {
+        return this.entityManager.find(Category);
     }
 
-    // serves "post(id: Int): Post" requests
     @Query()
-    post({ id }) {
-        return this.entityManager.findOne(Post, id);
+    category({ id }: { id: number }): Promise<Category> {
+        return this.entityManager.findOne(Category, id);
     }
 
-    // serves "postSave(id: Int, title: String, text: String): Post" requests
     @Mutation()
-    postSave(args) {
-        const post = this.entityManager.create(Post, args);
-        return this.entityManager.save(Post, post);
-    }
-
-    // serves "postDelete(id: Int): Boolean" requests
-    @Mutation()
-    async postDelete({ id }) {
-        await this.entityManager.remove({ id: id });
-        return true;
+    async categorySave(args: CategorySaveArgs): Promise<Category> {
+        const category = args.id ? await this.entityManager.findOneOrFail(Category, args.id) : new Category();
+        category.name = args.name;
+        return this.entityManager.save(category);
     }
 
 }

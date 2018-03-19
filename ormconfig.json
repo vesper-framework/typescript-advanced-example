@@ -1,5 +1,6 @@
 {
   "type": "sqlite",
   "database": "database.sqlite",
-  "synchronize": true
+  "synchronize": true,
+  "logging": false
 }
