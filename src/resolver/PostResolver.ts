@@ -1,4 +1,4 @@
-import {Resolver, ResolverInterface} from "graphstack";
+import {Resolve, Resolver, ResolverInterface} from "graphstack";
 import {EntityManager} from "typeorm";
 import {Post} from "../entity/Post";
 import {Category} from "../entity/Category";
@@ -9,6 +9,7 @@ export class PostResolver implements ResolverInterface<Post> {
     constructor(private entityManager: EntityManager) {
     }
 
+    @Resolve()
     async categoryNames(posts: Post[]) {
         const postIds = posts.map(post => post.id);
         const categories = await this.entityManager
