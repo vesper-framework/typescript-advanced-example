@@ -1,0 +1,5 @@
+src/**/*.js
+src/**/*.js.map
+node_modules/
+temp/
+database.sqlite
