@@ -20,7 +20,7 @@
     "vesper-typescript-example"
   ],
   "dependencies": {
-    "vesper": "0.0.1",
+    "vesper": "^0.1.0",
     "sqlite3": "^4.0.0"
   },
   "scripts": {
