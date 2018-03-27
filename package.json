@@ -1,7 +1,7 @@
 {
   "name": "typescript-advanced-example",
-  "version": "0.0.1",
-  "description": "How to use GraphStack with TypeScript - advanced example",
+  "version": "0.1.0",
+  "description": "How to use Vesper Framework with TypeScript - advanced example",
   "license": "MIT",
   "readmeFilename": "README.md",
   "author": {
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/graphframework/typescript-advanced-example.git"
+    "url": "https://github.com/vesper-framework/typescript-advanced-example.git"
   },
   "bugs": {
-    "url": "https://github.com/graphframework/typescript-advanced-example/issues"
+    "url": "https://github.com/vesper-framework/typescript-advanced-example/issues"
   },
   "tags": [
-    "graphstack",
-    "graphstack-typescript-example"
+    "vesper",
+    "vesper-typescript-example"
   ],
   "dependencies": {
-    "graphstack": "0.0.7",
+    "vesper": "0.0.1",
     "sqlite3": "^4.0.0"
   },
   "scripts": {

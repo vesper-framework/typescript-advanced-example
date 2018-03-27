@@ -1,4 +1,4 @@
-import {Resolve, Resolver, ResolverInterface} from "graphstack";
+import {Resolve, Resolver, ResolverInterface} from "vesper";
 import {EntityManager} from "typeorm";
 import {Post} from "../entity/Post";
 import {Category} from "../entity/Category";

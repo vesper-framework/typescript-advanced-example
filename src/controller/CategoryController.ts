@@ -1,4 +1,4 @@
-import {Controller, Mutation, Query} from "graphstack";
+import {Controller, Mutation, Query} from "vesper";
 import {EntityManager} from "typeorm";
 import {Category} from "../entity/Category";
 import {CategorySaveArgs} from "../args/CategorySaveArgs";

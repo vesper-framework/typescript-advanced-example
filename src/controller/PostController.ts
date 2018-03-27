@@ -1,4 +1,4 @@
-import {Controller, Query, Mutation, ArgsValidator} from "graphstack";
+import {ArgsValidator, Controller, Mutation, Query} from "vesper";
 import {EntityManager, FindManyOptions} from "typeorm";
 import {TextGenerator} from "../service/TextGenerator";
 import {Post} from "../entity/Post";
