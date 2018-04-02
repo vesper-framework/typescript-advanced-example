@@ -43,11 +43,9 @@ export class PostController {
         post.title = args.title;
         post.text = args.text ? args.text : this.textGenerator.generate();
         if (args.categoryIds) {
-            post.categories = args.categoryIds.map(categoryId => {
-                const category = new Category();
-                category.id = categoryId;
-                return category;
-            });
+            post.categories = await Promise.all(args.categoryIds.map(categoryId => {
+                return this.entityManager.findOne(Category, categoryId);
+            }));
         }
 
         return this.entityManager.save(Post, post);
